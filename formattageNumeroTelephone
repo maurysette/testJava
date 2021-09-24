@@ -1,0 +1,21 @@
+public class Kata {
+  public static String createPhoneNumber(int[] numbers) {
+    // Your code here!
+    String regex = "^\\(+[0-9]{3}+\\)+\\ +[0-9]{3}+\\-+[0-9]{4}";
+    boolean correct ;
+    String phoneNumber = "(";
+    for(int i = 0; i<numbers.length; i++){
+      phoneNumber += numbers[i];
+      if(i==2){
+        phoneNumber += ") ";
+      }else if(i ==5){
+        phoneNumber += "-";
+      }
+    }
+    if(phoneNumber.matches(regex)){
+      return phoneNumber;
+    }
+    return "error";
+  }
+  
+}
