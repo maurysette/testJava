@@ -49,3 +49,24 @@ public class JadenCase {
   }
 }
 
+// solution trois
+
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		// TODO put your code below this comment
+    char[] array = phrase.toCharArray();
+    if( phrase != null && phrase.length()!= 0 && !phrase.isEmpty()){
+      array[0] = Character.toUpperCase(array[0]);
+      
+      for(int i = 1; i<phrase.length();i++){
+        if(phrase.charAt(i-1)==' '){
+          array[i] = Character.toUpperCase(array[i]);
+        }
+      }
+      phrase= new String(array);
+      return phrase;
+    }
+		return null;
+  }
+}
