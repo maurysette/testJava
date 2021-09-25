@@ -1,0 +1,50 @@
+// première solution 
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		// TODO put your code below this comment
+    String phraseReturn; 
+    
+    if( phrase == null || phrase.length()== 0 || phrase.trim().isEmpty() ){
+      phraseReturn=null;
+    }else{
+      // initalisation
+      phraseReturn = Character.toString(phrase.charAt(0)).toUpperCase();
+      
+      // parcourt et concaténation
+      for(int i = 1; i<phrase.length();i++){
+        phraseReturn += Character.toString(phrase.charAt(i));
+        if(phrase.charAt(i)==' '){
+          phraseReturn +=Character.toString(phrase.charAt(i+1)).toUpperCase();
+          i++;
+        }
+      }
+    }
+		return phraseReturn;
+  }
+}
+
+// seconde solution
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		// TODO put your code below this comment
+    String phraseReturn=""; 
+    String charUpper ;
+    if( phrase == null || phrase.length()== 0 || phrase.trim().isEmpty() ){
+      phraseReturn=null;
+    }else{
+      String[] words = phrase.split(" ");
+      
+      for(String w:words){
+      charUpper=w.substring(0,1);
+      phraseReturn += w.replaceFirst(charUpper,charUpper.toUpperCase());
+      phraseReturn += " ";
+      }
+      //phraseReturn = phraseReturn.substring(0, phraseReturn.length() - 1);
+      phraseReturn = phraseReturn.trim();
+    }
+    
+		return phraseReturn;
+  }
+}
