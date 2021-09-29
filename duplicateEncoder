@@ -9,7 +9,6 @@ public class DuplicateEncoder {
     String encoder= "";
     String caract ;
     // stock in hasmap for duplicate cleaning 
-    if(word != null || !word.isEmpty()){
     for(int i = 0 ; i< word.length() ; i++){
      cpt=1;
      caract = word.substring(i,i+1).toLowerCase();
@@ -22,12 +21,10 @@ public class DuplicateEncoder {
     }
     for(int i = 0; i< word.length();i++){
       caract = word.substring(i,i+1).toLowerCase();
-      if(word.contains(caract)){
-        if(wordEncoder.get(caract)>1){
+      if(wordEncoder.get(caract)>1){
           encoder +=")";
-        }else encoder += "(";
-      }
-    }
+      }else encoder += "(";
+      
     }
     word= encoder;
     return word;
