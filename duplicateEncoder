@@ -1,3 +1,4 @@
+// ma solution
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -28,5 +29,20 @@ public class DuplicateEncoder {
     }
     word= encoder;
     return word;
+  }
+}
+
+
+// solution plus adéquat
+public class DuplicateEncoder {
+  static String encode(String word){
+    word = word.toLowerCase();
+    String result = "";
+    for (int i = 0; i < word.length(); ++i) {
+      char c = word.charAt(i);
+      // on récupère le dernier index du caractère, et l'index du caractère si les deux index sont égaux alors l'encodage vaut "(" sinon ")"
+      result += word.lastIndexOf(c) == word.indexOf(c) ? "(" : ")";
+    }
+    return result;
   }
 }
