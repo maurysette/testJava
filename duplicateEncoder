@@ -1,0 +1,35 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class DuplicateEncoder {
+	static String encode(String word){
+    Map<String, Integer> wordEncoder = new HashMap<String, Integer>();
+    int cpt =0 ;
+    String encoder= "";
+    String caract ;
+    // stock in hasmap for duplicate cleaning 
+    if(word != null || !word.isEmpty()){
+    for(int i = 0 ; i< word.length() ; i++){
+     cpt=1;
+     caract = word.substring(i,i+1).toLowerCase();
+      
+     if(wordEncoder.containsKey(caract)){
+        cpt = wordEncoder.get(caract)+1; 
+        wordEncoder.replace(caract,cpt);
+      }
+     wordEncoder.put(caract,cpt);
+    }
+    for(int i = 0; i< word.length();i++){
+      caract = word.substring(i,i+1).toLowerCase();
+      if(word.contains(caract)){
+        if(wordEncoder.get(caract)>1){
+          encoder +=")";
+        }else encoder += "(";
+      }
+    }
+    }
+    word= encoder;
+    return word;
+  }
+}
