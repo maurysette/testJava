@@ -2,11 +2,7 @@ public class Kata {
   public static String highAndLow(String numbers) {
     // Code here or
     String result = "";
-    String tampon ; 
-    numbers = numbers.trim();
     String[] array = numbers.split(" ");
-    
-      System.out.println(numbers);
     int[] intArray = new int[array.length];
     
     for(int i = 0; i<array.length; i++){
@@ -28,5 +24,25 @@ public class Kata {
     
     result = highest + " "+ lowest;
     return result;
+  }
+}
+
+
+// autre solution
+
+public class Kata {
+  public static String HighAndLow(String numbers) {
+     int max = Integer.MIN_VALUE;
+     int min = Integer.MAX_VALUE;
+     String nums[] = numbers.split(" ");
+     
+     for(String s: nums) {
+       int num = Integer.parseInt(s);
+       
+       max = Math.max(max, num);
+       min = Math.min(min, num);
+     }  
+     
+     return "" + max + " " + min;
   }
 }
