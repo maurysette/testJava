@@ -1,0 +1,11 @@
+public class Kata {
+
+  public static String solution(String str) {
+    String strUpsideDown = "";
+    for(int i =str.length();i>0;i--){
+      strUpsideDown += str.substring(i-1,i);
+    }
+    return strUpsideDown;
+  }
+
+}
