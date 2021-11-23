@@ -1,0 +1,20 @@
+public class DnaStrand {
+  public static String makeComplement(String dna) {
+    //Your code
+    String nda = "";
+    for(int i = 0; i<dna.length(); i ++){
+      switch(dna.substring(i,i+1)){
+          case "A" : nda += "T";
+          break ;
+          case "T": nda += "A";
+          break;
+          case "C": nda += "G";
+          break;
+          case "G": nda += "C";
+          break;
+      }
+    }
+    return nda ; 
+  }
+}
+
