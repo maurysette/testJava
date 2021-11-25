@@ -1,0 +1,22 @@
+public class Accumul {
+    
+    public static String accum(String s) {
+     // your code
+      String accum = "";
+      char[] charArray = s.toCharArray();
+      for (int i = 0; i<charArray.length;i++){
+        accum += Character.toUpperCase(charArray[i]);
+        if(i !=0){
+          int a = 1;
+          while(a<i+1){
+          accum += Character.toLowerCase(charArray[i]);
+            a++;
+          }
+        }
+        if(i != charArray.length - 1){
+        accum += "-";
+        }
+      }
+      return accum;
+    }
+}
